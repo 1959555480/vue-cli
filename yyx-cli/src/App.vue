@@ -5,9 +5,14 @@
       <router-link to="/about">About</router-link>
       <div class="yyx-add">123456</div>
     </div>
-    <router-view />
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
+
+
 
 <style lang="scss">
 #app {
@@ -17,14 +22,11 @@
   text-align: center;
   color: #2c3e50;
 }
-
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
-
     &.router-link-exact-active {
       color: #42b983;
     }

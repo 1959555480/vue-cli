@@ -3,6 +3,8 @@ module.exports = {
     // 设置目录别名alias .set 前面是自定义 后面是目录
     config.resolve.alias
       .set('@123', '@/assets')
+      .set('@cp', '@/components')
+      .set('@vi', '@/views')
   },
   css: {
     // css预设配置项
@@ -22,12 +24,20 @@ module.exports = {
     }
   },
   devServer: {
-    open: true, // 启动服务后是否打开浏览器
-    // host: '127.0.0.1',
-    // port: 8088, // 服务端口
-    // https: false,
+    // open: true,    //是否自动打开浏览器
+    port: 8080,      //启动端口号
+    // https: false,    //是否开启https
     // hotOnly: false,
-    // 设置代理，用来解决本地开发跨域问题，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
-    // proxy: 'https://easy-mock.com/' // 设置代理
-  }
+    // proxy: {
+    //   // 配置跨域
+    //   '/api': {
+    //     target: 'http://www.gos.global/app',
+    //     ws: true,
+    //     changOrigin: true,    //是否开启代理
+    //     pathRewrite: {  //api开头的请求会去到target下请求
+    //       '^/api': ''   //以/api开头的请求替换为空
+    //     }
+    //   }
+    // },
+  },
 }
