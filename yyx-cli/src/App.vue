@@ -4,6 +4,9 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>
+    <div @click="changeName">
+      修改状态
+    </div>
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
@@ -20,7 +23,10 @@ export default {
   },
   methods:{
     ...mapMutations('login',['setName']),
-    ...mapActions('login',['getGlobalName'])
+    ...mapActions('login',['getGlobalName']),
+    changeName(){
+      this.setName('烟花笑')
+    }
   },
   created() {
     console.log(this.$store.state.home.name, this.name);
