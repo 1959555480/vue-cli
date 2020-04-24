@@ -9,7 +9,7 @@ else {
 }
 const xhr = axios.create({
   baseURL,
-  timeout: 100000
+  timeout: 10000
 })
 
 // post请求,needHeader参数用于判断是否需要认证

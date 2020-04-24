@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+//router 模块化
+import home2 from './home'
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -21,14 +24,14 @@ const router = new VueRouter({
       meta: {
         auth: false, //是否需要登录
         keepAlive: false //是否需要缓存
-      }
-    }
+      },
+    },
+    
+    ...home2
   ]
 });
-
 router.beforeEach((to, from, next) => {
   let auth = to.meta.auth
-  console.log("to", auth)
   if (auth) { //需要登录
     next({
       path: '/login',

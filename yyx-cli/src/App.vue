@@ -3,7 +3,6 @@
     <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
-      <div class="yyx-add">123456</div>
     </div>
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -11,28 +10,26 @@
     <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
-
+<script>
+import { mapState,mapMutations, mapActions } from "vuex";
+export default {
+  computed: {
+    ...mapState({
+      name: state => state.login.name
+    })
+  },
+  methods:{
+    ...mapMutations('login',['setName']),
+    ...mapActions('login',['getGlobalName'])
+  },
+  created() {
+    console.log(this.$store.state.home.name, this.name);
+    this.setName('yyx')
+    this.getGlobalName()
+  }
+};
+</script>>
 
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-.yyx-add {
-  font-size: 50px;
-}
 </style>
