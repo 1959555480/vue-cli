@@ -30,6 +30,7 @@ const router = new VueRouter({
     ...home2
   ]
 });
+//全局路由收尾 如果需要判断登录再进入页面的时候使用
 router.beforeEach((to, from, next) => {
   let auth = to.meta.auth
   if (auth) { //需要登录
