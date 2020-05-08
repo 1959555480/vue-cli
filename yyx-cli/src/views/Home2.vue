@@ -10,6 +10,9 @@ export default {
   name: "home2",
   components:{
     mHeader
+  },
+  created(){
+    console.log("home2页面created")
   }
 };
 </script>

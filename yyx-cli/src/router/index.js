@@ -7,13 +7,6 @@ import home2 from './home'
 
 Vue.use(VueRouter);
 
-VueRouter.prototype.goBack = function(){
-  this.isBack = true
-  console.log("VueRoutergoback",this.isBack)
-  window.history.go(-1)
-}
-
-
 const router = new VueRouter({
   routes: [
     {
@@ -22,7 +15,7 @@ const router = new VueRouter({
       component: () => import('@vi/Home.vue'),
       meta: {
         auth: false, //是否需要登录
-        keepAlive: false //是否需要缓存
+        keepAlive: true //是否需要缓存
       }
     },
     {
@@ -31,7 +24,7 @@ const router = new VueRouter({
       component: () => import("../views/About.vue"),
       meta: {
         auth: false, //是否需要登录
-        keepAlive: false //是否需要缓存
+        keepAlive: true //是否需要缓存
       },
     },
     

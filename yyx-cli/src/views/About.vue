@@ -15,6 +15,9 @@ export default {
     go(){
       this.$router.go(-1)
     }
+  },
+  created(){
+    console.log("没有缓存，加载about")
   }
 };
 </script>
