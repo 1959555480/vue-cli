@@ -12,9 +12,6 @@ export default {
     mHeader
   },
   methods:{
-    go(){
-      this.$router.go(-1)
-    }
   },
   created(){
     console.log("没有缓存，加载about")
@@ -22,7 +19,4 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.about{
-  background-color: skyblue;
-}
 </style>

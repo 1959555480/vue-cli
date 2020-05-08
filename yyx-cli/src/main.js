@@ -7,7 +7,7 @@ import store from "./store";
 // 各种移动端的适配
 import 'amfe-flexible/index.js';
 
-// 动画
+// 前进后退动画插件
 import RouteTransition from 'vue-route-transition'
 Vue.use(RouteTransition)
 
