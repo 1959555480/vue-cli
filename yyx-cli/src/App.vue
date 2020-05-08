@@ -1,6 +1,6 @@
 <template>
     <vue-route-transition id="app" :keepAlive="true">
-     <router-view class="router-view" v-if="!$route.meta.keepAlive"></router-view>
+     <router-view></router-view>
     </vue-route-transition>
 </template>
 

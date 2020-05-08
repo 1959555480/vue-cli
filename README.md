@@ -13,3 +13,6 @@ vue-cli移动端模板 便以下次开发
 * 使用前进后退动画,记录滚动条位置（vue-route-transition插件）
 * 引入UI框架（未完成）
 > https://juejin.im/post/5cbf32bc6fb9a03236393379#heading-0
+
+### vue-route-transition 
+* 记录滚动条位置需要依赖router-layout

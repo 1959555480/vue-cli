@@ -1,15 +1,19 @@
 <template>
   <router-layout>
-    <m-header>home2</m-header>
+    <header slot="header">1</header>
+    <div>
+      <!-- <m-header>13213</m-header> -->
+    </div>
+    <footer slot="footer">2</footer>
   </router-layout>
 </template>
 
 <script>
-import mHeader from '@/components/header'
+// import mHeader from '@/components/header'
 export default {
   name: "home2",
   components:{
-    mHeader
+    // mHeader
   },
   created(){
     console.log("home2页面created")
