@@ -1,11 +1,18 @@
 <template>
-  <div class="about">
-    <h1>home2home2home2</h1>
-  </div>
+  <router-layout>
+    <m-header>home2</m-header>
+  </router-layout>
 </template>
 
 <script>
+import mHeader from '@/components/header'
 export default {
-  name: "home2"
+  name: "home2",
+  components:{
+    mHeader
+  }
 };
 </script>
+<style lang="less" scoped>
+
+</style>

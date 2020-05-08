@@ -4,7 +4,15 @@ import VueRouter from "vue-router";
 //router 模块化
 import home2 from './home'
 
+
 Vue.use(VueRouter);
+
+VueRouter.prototype.goBack = function(){
+  this.isBack = true
+  console.log("VueRoutergoback",this.isBack)
+  window.history.go(-1)
+}
+
 
 const router = new VueRouter({
   routes: [
@@ -14,7 +22,7 @@ const router = new VueRouter({
       component: () => import('@vi/Home.vue'),
       meta: {
         auth: false, //是否需要登录
-        keepAlive: true //是否需要缓存
+        keepAlive: false //是否需要缓存
       }
     },
     {

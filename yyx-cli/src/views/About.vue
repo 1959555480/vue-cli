@@ -1,11 +1,25 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <router-layout>
+    <m-header>about</m-header>
+  </router-layout>
 </template>
 
 <script>
+import mHeader from '@/components/header'
 export default {
-  name: "about"
+  name: "about",
+  components:{
+    mHeader
+  },
+  methods:{
+    go(){
+      this.$router.go(-1)
+    }
+  }
 };
 </script>
+<style lang="less" scoped>
+.about{
+  background-color: skyblue;
+}
+</style>
