@@ -11,6 +11,7 @@ vue-cli移动端模板 便以下次开发
 * axios、api封装设计
 * vuex状态管理
 * 使用前进后退动画,记录滚动条位置（vue-route-transition插件）
+* 引入mixin 复用方法
 * 引入UI框架（未完成）
 > https://juejin.im/post/5cbf32bc6fb9a03236393379#heading-0
 
