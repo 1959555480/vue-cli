@@ -6,7 +6,10 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from "vuex";
+import mixin from '@/mixin'
+
 export default {
+  mixins: [mixin],
   data() {
     return {
     };
@@ -25,6 +28,7 @@ export default {
     }
   },
   created() {
+    this.showName()
     console.log(this.$store.state.home.name, this.name);
     this.setName("yyx");
     this.getGlobalName();
