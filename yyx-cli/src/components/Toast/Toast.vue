@@ -6,8 +6,8 @@
 export default {
   data(){
     return{
-      mag: '',
-      showToast: false
+      msg: '',
+      showToast: true
     }
   }
 }
@@ -16,5 +16,8 @@ export default {
 <style lang="less" scoped>
 .tao{
   margin-top: 0;
+  position: fixed;
+  left: 0;
+  top: 50%;
 }
 </style>

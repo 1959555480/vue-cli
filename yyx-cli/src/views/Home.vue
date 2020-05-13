@@ -3,7 +3,7 @@
     <div class="home">
       <!-- <img alt="Vue logo" src="@123/logo.png" /> -->
       <div id="nav">
-        <!-- <router-link to="/about">About</router-link> -->
+        <router-link to="/about">About</router-link>
       </div>
       <div class="home_color">
         <div class="box">

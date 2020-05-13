@@ -1,6 +1,6 @@
 <template>
     <vue-route-transition id="app" :keepAlive="true">
-     <!-- <router-view></router-view> -->
+     <router-view></router-view>
     </vue-route-transition>
 </template>
 
@@ -31,9 +31,8 @@ export default {
     // this.showName()
     // console.log(this.$store.state.home.name, this.name);
     // this.setName("yyx");
-    this.$toast({showToast:true,msg:'123'})
+    // this.$toast.msg("good")
     // this.getGlobalName();
-    
   }
 };
 </script>

@@ -1,17 +1,26 @@
 import ToastComponent from './Toast.vue'
-import Vue from 'vue'
 
-// 利用 Vue.extend 构造器把toast组件挂载到vue实例下
-let Toast = Vue.extend(ToastComponent)
+const Toast = {}
 
-let instance
-const toast = function(options){
-  options = options || {}
-  instance = new Toast({
-    data: options
-  })
-  instance.vm = instance.$mount()
-  document.body.appendChild(instance.vm.$el)
-  return instance.vm
+Toast.install = (Vue) => {
+  // 生成一个Vue的子类
+  // 同时这个子类也就是组件
+  const ToastConstructor = Vue.extend(ToastComponent)
+  // 生成一个该子类的实例
+  const instance = new ToastConstructor()
+  // 将这个实例挂载在我创建的div上
+  // 并将此div加入全局挂载点内部
+  instance.$mount(document.createElement('div'))
+  document.body.appendChild(instance.$el)
+
+  // 通过Vue的原型注册一个方法
+  // 让所有实例共享这个方法
+  const toastMethods = {
+    msg (msg) {
+      instance.msg = msg
+    }
+  }
+  Vue.prototype.$toast = toastMethods
 }
-export default toast
+
+export default Toast
