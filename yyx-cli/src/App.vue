@@ -1,6 +1,6 @@
 <template>
     <vue-route-transition id="app" :keepAlive="true">
-     <router-view></router-view>
+     <!-- <router-view></router-view> -->
     </vue-route-transition>
 </template>
 
@@ -28,10 +28,12 @@ export default {
     }
   },
   created() {
-    this.showName()
-    console.log(this.$store.state.home.name, this.name);
-    this.setName("yyx");
-    this.getGlobalName();
+    // this.showName()
+    // console.log(this.$store.state.home.name, this.name);
+    // this.setName("yyx");
+    this.$toast({showToast:true,msg:'123'})
+    // this.getGlobalName();
+    
   }
 };
 </script>

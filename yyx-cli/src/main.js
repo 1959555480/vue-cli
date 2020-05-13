@@ -11,6 +11,9 @@ import 'amfe-flexible/index.js';
 import RouteTransition from 'vue-route-transition'
 Vue.use(RouteTransition)
 
+import toast from './components/Toast'
+Vue.prototype.$toast = toast
+
 Vue.config.productionTip = false;
 
 new Vue({
